@@ -1,0 +1,49 @@
+html { scroll-behavior: smooth; }
+body { margin: 0; font-family: Arial, sans-serif; color: #333; }
+
+/* Full-screen wallpaper that stays fixed while scrolling */
+body::before { content: ""; position: fixed; inset: 0; z-index: -1;
+  background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url("images/background.jpg") center / cover no-repeat; }
+
+header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;
+         padding: 15px 30px; background: rgba(255,255,255,0.95); position: sticky; top: 0; z-index: 10; }
+h1, h2 { color: #145a32; }
+h1 { margin: 0; font-size: 24px; }
+nav a { margin-left: 20px; text-decoration: none; color: #145a32; font-weight: bold; }
+
+section { padding: 30px; max-width: 900px; margin: auto; }
+#home { min-height: 75vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+#home h2, #home p { color: white; text-shadow: 0 2px 6px rgba(0,0,0,0.6); }
+#home h2 { font-size: 40px; }
+.panel { background: rgba(255,255,255,0.94); border-radius: 10px; margin-bottom: 25px; }
+
+button, .btn { background: #145a32; color: white; border: none; padding: 8px 14px;
+               border-radius: 5px; cursor: pointer; text-decoration: none; display: inline-block; }
+button:hover, .btn:hover { background: #0e4224; }
+
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 15px; }
+.card { height: 220px; border-radius: 8px; padding: 12px; box-sizing: border-box; color: white;
+        display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start;
+        background-size: cover; background-position: center; }
+.card h3 { margin: 0; color: white; }
+.card p { margin: 4px 0 8px; font-weight: bold; }
+.idli    { background-image: linear-gradient(transparent 35%, rgba(0,0,0,0.8)), url("images/idli.jpg"); }
+.dosa    { background-image: linear-gradient(transparent 35%, rgba(0,0,0,0.8)), url("images/dosa.jpg"); }
+.meals   { background-image: linear-gradient(transparent 35%, rgba(0,0,0,0.8)), url("images/veg-meals.jpg"); }
+.biryani { background-image: linear-gradient(transparent 35%, rgba(0,0,0,0.8)), url("images/chicken-biryani.jpg"); }
+
+#order-list { list-style: none; padding: 0; }
+#order-list li { display: flex; justify-content: space-between; align-items: center;
+                 flex-wrap: wrap; gap: 8px; padding: 10px 0; border-bottom: 1px solid #dde5e0; }
+.remove { background: #a93226; }
+.total { font-size: 20px; font-weight: bold; color: #145a32; }
+#message { display: none; margin-top: 15px; padding: 12px; border-radius: 5px; font-weight: bold; }
+.success { display: block !important; background: #d4edda; color: #145a32; }
+.error { display: block !important; background: #f8d7da; color: #a93226; }
+
+@media (max-width: 600px) {
+  header { flex-direction: column; gap: 8px; }
+  nav a { margin: 0 10px; }
+  #home h2 { font-size: 30px; }
+  .cards { grid-template-columns: 1fr 1fr; }
+}

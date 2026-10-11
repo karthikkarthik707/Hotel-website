@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grand Palace Restaurant</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Grand Palace Restaurant</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#menu">Menu</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="home">
+    <h2>Welcome to Grand Palace</h2>
+    <p>Fresh South Indian food, served with love.</p>
+    <a href="#menu" class="btn">View Menu</a>
+  </section>
+
+  <section id="menu" class="panel">
+    <h2>Our Menu</h2>
+    <div class="cards">
+      <div class="card idli"><h3>Idli</h3><p>₹40</p><button onclick="addItem('Idli', 40)">Add</button></div>
+      <div class="card dosa"><h3>Dosa</h3><p>₹80</p><button onclick="addItem('Dosa', 80)">Add</button></div>
+      <div class="card meals"><h3>Veg Meals</h3><p>₹150</p><button onclick="addItem('Veg Meals', 150)">Add</button></div>
+      <div class="card biryani"><h3>Chicken Biryani</h3><p>₹220</p><button onclick="addItem('Chicken Biryani', 220)">Add</button></div>
+    </div>
+  </section>
+
+  <section id="order" class="panel">
+    <h2>Order Summary</h2>
+    <ul id="order-list"></ul>
+    <p class="total">Total: ₹<span id="total">0</span></p>
+    <button id="submit-btn" onclick="placeOrder()">Submit Order</button>
+    <p id="message"></p>
+  </section>
+
+  <section id="contact" class="panel">
+    <h2>Contact Us</h2>
+    <p>Phone: +91 98765 43210</p>
+    <p>Address: 12 Main Road, Chennai, Tamil Nadu 600001</p>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
